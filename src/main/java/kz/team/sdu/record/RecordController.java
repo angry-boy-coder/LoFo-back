@@ -37,9 +37,9 @@ public class RecordController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity removeRecord(@PathVariable("id") Integer id)  {
         Status status = new Status();
-        Optional<User> user = userRepository.findById(id);
-        if(user.isPresent()){
-            userRepository.delete(user.get());
+        Optional<Record> record = recordRepository.findById(id);
+        if(record.isPresent()){
+            recordRepository.delete(record.get());
             status.status = 1;
             status.message = "Deleted";
         }
