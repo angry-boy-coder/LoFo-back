@@ -3,7 +3,7 @@ package kz.team.sdu.user;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "student")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

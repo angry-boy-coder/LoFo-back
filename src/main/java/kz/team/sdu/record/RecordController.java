@@ -1,17 +1,14 @@
 package kz.team.sdu.record;
 
 import kz.team.sdu.system.Status;
-import kz.team.sdu.user.User;
 import kz.team.sdu.user.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +54,6 @@ public class RecordController {
             record.get().setTitle(editRecord.getTitle());
             record.get().setCategory(editRecord.getCategory());
             record.get().setDescription(editRecord.getDescription());
-            record.get().setPlace(editRecord.getPlace());
             record.get().setPlace(editRecord.getPlace());
             recordRepository.save(record.get());
             status.status = 1;
