@@ -1,10 +1,15 @@
-package kz.team.sdu.user;
+package kz.team.sdu.student;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Table(name = "student")
-public class User {
+public class Student extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -14,6 +19,18 @@ public class User {
 
     private String role;
     private String number;
+
+    public Student(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+        super(username, password, authorities);
+    }
+
+    public Student(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+    }
+
+    public Student() {
+        super("", "", new ArrayList<>());
+    }
 
     public Integer getId() {
         return id;

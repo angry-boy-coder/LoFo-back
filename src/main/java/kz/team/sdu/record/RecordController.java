@@ -1,7 +1,7 @@
 package kz.team.sdu.record;
 
 import kz.team.sdu.system.Status;
-import kz.team.sdu.user.UserRepository;
+import kz.team.sdu.student.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class RecordController {
     RecordRepository recordRepository;
 
     @Autowired
-    UserRepository userRepository;
+    StudentRepository userRepository;
 
     @GetMapping("/list")
     public List<Record> getRecords()  {

@@ -1,6 +1,6 @@
-package kz.team.sdu.user;
+package kz.team.sdu.student;
 
-public class UserPayload {
+public class StudentPayload {
     public String name;
     public String email;
     public String number;
